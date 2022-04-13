@@ -1,10 +1,18 @@
 version: '3'
 services:
   db:
-    image: mysql
-  server:
-    build: .
+    image: postgres:latest
+    container_name: "db"
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
     ports:
-      - "3000:3000"
+      - '8080:8080'
+  server:
+    build: ./server
+    container_name: "server"
+    ports:
+      - '3000:3000'
     depends_on:
       - db
