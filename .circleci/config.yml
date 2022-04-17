@@ -30,7 +30,7 @@ jobs:
           name: install dipendency
           working_directory: server/app
           command: go mod download
-      - run
+      - run:
           name: build server
           working_directory: server/app
           command: go build -o ./prod_server -mod mod
