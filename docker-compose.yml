@@ -16,9 +16,11 @@ services:
       - '8000:8000'
     depends_on:
       - db
+    volumes:
+      - ./server/app/:/go/src/app
   front:
     build: ./front
-    container_name: front
+    container_name: "front"
     ports:
       - '3000:3000'
     volumes:

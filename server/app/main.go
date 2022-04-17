@@ -1,15 +1,14 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+	"todo/handler"
+
+	"github.com/gorilla/mux"
 )
 
-func handleIndex(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Hello world")
-}
-
 func main() {
-	http.HandleFunc("/", handleIndex)
-	http.ListenAndServe(":3000", nil)
+	r := mux.NewRouter()
+	r.HandleFunc("/", handler.Hello)
+	http.ListenAndServe(":8000", r)
 }
