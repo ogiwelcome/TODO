@@ -1,5 +1,6 @@
+import {Button} from "@chakra-ui/react"
 function Home() {
-  return <div>Welcome to Next.js!</div>
+  return <Button>Welcome to Next.js!</Button>
 }
 
 export default Home
