@@ -8,7 +8,8 @@ import (
 )
 
 func main() {
-	r := mux.NewRouter()
-	r.HandleFunc("/", handler.Hello)
-	http.ListenAndServe(":8000", r)
+	router := mux.NewRouter()
+	router.HandleFunc("/", handler.Hello)
+	router.Use(handler.CORSOriginMiddleware)
+	http.ListenAndServe(":8000", router)
 }
