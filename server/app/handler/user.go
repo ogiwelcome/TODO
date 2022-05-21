@@ -24,7 +24,7 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 
 func AddUser(w http.ResponseWriter, r *http.Request) {
 	user := domain.NewUser("81f981b2-bdfa-4b98-b1a3-b4669f948a111", "鈴木ジオ")
-	result, err := usecase.AddUser(&user)
+	_, err := usecase.AddUser(&user)
 	if err != nil {
 		fmt.Println(err)
 	}
