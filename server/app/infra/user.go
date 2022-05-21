@@ -4,8 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	"todo/domain"
-
-	_ "github.com/lib/pq"
 )
 
 const SQL = "postgres"
