@@ -13,6 +13,8 @@ services:
   server:
     build: ./server
     container_name: "server"
+    env_file:
+      - server.env
     ports:
       - '8000:8000'
     depends_on:
