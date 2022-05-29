@@ -36,9 +36,9 @@ jobs:
           command: go build -o ./prod_server -mod mod
   deploy_stage:
     context:
-    - TODO
+      - TODO
     docker:
-    - image: cimg/go:1.17.4
+      - image: cimg/go:1.17.4
     steps:
       - checkout
       - run:
