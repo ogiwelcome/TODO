@@ -43,4 +43,3 @@ workflows:
     jobs:
       - say-hello
       - server-build
-      - deploy_stage
